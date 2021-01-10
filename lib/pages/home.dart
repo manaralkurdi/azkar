@@ -62,57 +62,62 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: myButtons(
+            Transform.translate(
+              offset: Offset(0, _size.height * 0.03),
+              child: Container(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Directionality(
+                          textDirection: TextDirection.rtl,
+                          child: myButtons(
+                            context,
+                            () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Alwerd()));
+                            },
+                            Icons.person_add_disabled,
+                            'الورد اليومي',
+                          ),
+                        ),
+                        myButtons(
                           context,
                           () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Alwerd()));
+                                    builder: (context) => Azkar()));
                           },
-                          Icons.person_add_disabled,
-                          'الورد اليومي',
+                          Icons.person_add,
+                          'أذكاري',
                         ),
-                      ),
-                      myButtons(
-                        context,
-                        () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Azkar()));
-                        },
-                        Icons.person_add,
-                        'أذكاري',
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      myButtons(
-                        context,
-                        () {},
-                        Icons.account_balance,
-                        'التسبيح',
-                      ),
-                      myButtons(
-                        context,
-                        () {},
-                        Icons.person,
-                        'أوقات التذكير',
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        myButtons(
+                          context,
+                          () {},
+                          Icons.account_balance,
+                          'التسبيح',
+                        ),
+                        myButtons(
+                          context,
+                          () {},
+                          Icons.person,
+                          'أوقات التذكير',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

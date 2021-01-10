@@ -6,7 +6,7 @@ class EveningAzkar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CollectionReference eveningAzkar =
-        AzkarApp.firebaseFirestore.collection('evening');
+        FirebaseFirestore.instance.collection('evening');
 
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
