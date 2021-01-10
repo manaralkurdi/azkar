@@ -1,3 +1,4 @@
+import 'package:azkar/utility/constans.dart';
 import 'package:flutter/material.dart';
 
 Widget myButtons(context, Function onTap, IconData icon, String text) {
@@ -9,8 +10,17 @@ Widget myButtons(context, Function onTap, IconData icon, String text) {
       width: _size.width * 0.34,
       height: _size.height * 0.14,
       decoration: BoxDecoration(
-        color: Color(0xFF4B9Fb9),
-        borderRadius: BorderRadius.circular(7),
+        color: mainColor,
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 7,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
