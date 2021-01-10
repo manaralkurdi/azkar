@@ -28,7 +28,26 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/download.jpg
+    - assets/images/
 
 
 
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Kufam
+      fonts:
+        - asset: assets/fonts/Kufam/static/Kufam-Bold.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+    - family: Rakkas
+      fonts:
+        - asset: assets/fonts/Rakkas/Rakkas-Regular.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
