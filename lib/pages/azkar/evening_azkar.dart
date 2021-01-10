@@ -33,40 +33,59 @@ class EveningAzkar extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             }
-            return ListView.builder(
-              padding: EdgeInsets.only(
-                bottom: 40,
-                top: 10,
-              ),
-              shrinkWrap: true,
-              itemCount: snapshot.data.docs.length,
-              itemBuilder: (context, index) {
-                DocumentSnapshot myData = snapshot.data.docs[index];
-                return Container(
-                  margin:
-                      EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26.withOpacity(0.5),
-                        spreadRadius: 3,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    child: ListView.builder(
+                      padding: EdgeInsets.only(
+                        bottom: 40,
+                        top: 10,
                       ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  child: Text(
-                    myData['content'],
-                    style: TextStyle(
-                      fontFamily: 'Rakkas',
-                      fontSize: 20,
+                      shrinkWrap: true,
+                      itemCount: snapshot.data.docs.length,
+                      itemBuilder: (context, index) {
+                        DocumentSnapshot myData = snapshot.data.docs[index];
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: 16, right: 16, top: 8, bottom: 8),
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black26.withOpacity(0.5),
+                                spreadRadius: 3,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          child: Text(
+                            myData['content'],
+                            style: TextStyle(
+                              fontFamily: 'Rakkas',
+                              fontSize: 20,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
-                );
-              },
+                  Column(
+                    children: [
+                      Container(
+                        height: 200,
+                        width: double.infinity,
+                        color: Colors.red,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             );
           },
         ),
