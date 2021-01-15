@@ -30,6 +30,7 @@ flutter:
   assets:
     - assets/images/
     - assets/elwrd.mp3
+    - assets/BGG.gif
 
 
 

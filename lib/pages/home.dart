@@ -1,3 +1,4 @@
+import 'package:azkar/pages/altasbeh.dart';
 import 'package:azkar/pages/alwerdalyawme/alwerd.dart';
 import 'package:azkar/pages/azkar/azkar.dart';
 import 'package:azkar/widgets/home_buttons.dart';
@@ -104,7 +105,12 @@ class Home extends StatelessWidget {
                       children: [
                         myButtons(
                           context,
-                          () {},
+                          () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Altasbeh()));
+                          },
                           Icons.account_balance,
                           'التسبيح',
                         ),
