@@ -1,4 +1,4 @@
-import 'package:azkar/pages/altasbeh.dart';
+import 'package:azkar/pages/altasbeh.dart' show Altasbeh;
 import 'package:azkar/pages/alwerdalyawme/alwerd.dart';
 import 'package:azkar/pages/azkar/azkar.dart';
 import 'package:azkar/widgets/home_buttons.dart';
@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
+      // appBar: AppBar(ss
       //   title: Text('Remind Me'),
       //   actions: [
       //     IconButton(
