@@ -1,3 +1,4 @@
+import 'package:azkar/pages/azkar/morning_sound.dart';
 import 'package:azkar/utility/constans.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,14 @@ class MorningAzkar extends StatelessWidget {
     CollectionReference morningAzkar =
         AzkarApp.firebaseFirestore.collection('morning');
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.record_voice_over),
+        backgroundColor: mainColor,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MorningSound()));
+        },
+      ),
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         backgroundColor: mainColor,

@@ -1,3 +1,4 @@
+import 'package:azkar/pages/azkar/evening_sound.dart';
 import 'package:azkar/utility/constans.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,14 @@ class EveningAzkar extends StatelessWidget {
         FirebaseFirestore.instance.collection('evening');
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.record_voice_over),
+        backgroundColor: mainColor,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => EveningSound()));
+        },
+      ),
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         title: Text(
