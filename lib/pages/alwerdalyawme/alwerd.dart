@@ -28,6 +28,7 @@ class Alwerd extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             }
+
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                 child: CircularProgressIndicator(),
@@ -49,7 +50,8 @@ class Alwerd extends StatelessWidget {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black26.withOpacity(0.5),
+                        color: Colors.black26.withOpacity(
+                            0.5), //I Love you Manaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar
                         spreadRadius: 3,
                         blurRadius: 7,
                         offset: Offset(0, 3), // changes position of shadow
