@@ -16,9 +16,15 @@ dependencies:
 
 
   cupertino_icons: ^1.0.0
+
+  rxdart: ^0.24.1
+  path_provider: ^1.6.11
+  http: ^0.12.1
+  flutter_local_notifications: ^1.4.4+1
   audioplayers: ^0.16.1
-  firebase_core: ^0.5.3
-  cloud_firestore: ^0.14.4
+  firebase_core: ^0.7.0
+  cloud_firestore: ^0.16.0
+  firebase_storage: ^7.0.0
 
 dev_dependencies:
   flutter_test:
@@ -32,14 +38,12 @@ flutter:
     - assets/elwrd.mp3
     - assets/BGG.gif
 
+    
 
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  fonts:
+
+
+  fonts: 
     - family: Kufam
       fonts:
         - asset: assets/fonts/Kufam/static/Kufam-Bold.ttf
@@ -48,6 +52,9 @@ flutter:
     - family: Rakkas
       fonts:
         - asset: assets/fonts/Rakkas/Rakkas-Regular.ttf
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster/Lobster-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

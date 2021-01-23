@@ -6,89 +6,83 @@ class Altasbeh extends StatefulWidget {
 }
 
 class _AltasbehState extends State<Altasbeh> {
-  // ignore: unused_field
   int _counter = 0;
-
-  // ignore: non_constant_identifier_names
-  void _IncrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  // ignore: non_constant_identifier_names
-  void _ResetCounter() {
-    setState(() {
-      _counter = 0;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/BGG.gif"), fit: BoxFit.cover)),
-        child: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "$_counter",
-                  style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white),
-                ),
-                Text(
-                  "عدد التسبيح ",
-                  style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white),
-                ),
-              ]),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Colors.black,
         ),
+        elevation: 0,
       ),
-      floatingActionButton: Stack(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(left: 31),
-            child: Align(
-              alignment: Alignment.bottomLeft,
-              child: FloatingActionButton.extended(
-                heroTag: null,
-                onPressed: () {
-                  _ResetCounter();
-                },
-                label: Text(
-                  "تصغير",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Stack(children: <Widget>[
+          Transform.translate(
+            offset: Offset(-_size.width * 0.04, -_size.height * 0.0),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: ExactAssetImage('assets/images/clock.png'),
+                  fit: BoxFit.cover,
                 ),
-                icon: Icon(Icons.settings_backup_restore),
-                backgroundColor: Colors.black,
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: FloatingActionButton.extended(
-              heroTag: null,
-              onPressed: () {
-                _IncrementCounter();
+          Center(
+            child: Transform.translate(
+              offset: Offset(_size.width * 0.01, -_size.height * 0.08),
+              child: Text(
+                '$_counter',
+                style: TextStyle(
+                  fontSize: 50,
+                  letterSpacing: 10,
+                  fontFamily: 'Lobster',
+                ),
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(_size.width * 0.19, _size.height * 0.455),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  _counter = 0;
+                });
               },
-              label: Text(
-                "تسبيح",
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              child: Container(
+                height: _size.height * 0.06,
+                width: _size.width * 0.13,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                ),
               ),
-              icon: Icon(Icons.fingerprint),
-              backgroundColor: Colors.black,
             ),
           ),
-        ],
+          Transform.translate(
+            offset: Offset(_size.width * 0.359, _size.height * 0.52),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  _counter++;
+                });
+              },
+              child: Container(
+                height: _size.height * 0.15,
+                width: _size.width * 0.3,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
